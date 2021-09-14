@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <img alt="software shop logo" src="../assets/software-development.svg" class="home__icon" />
-    <WebStore />
+    <ProductList />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import WebStore from "@/components/WebStore.vue";
+import ProductList from "@/components/ProductList.vue";
 
 export default {
-  name: "Home",
+  name: "Main",
   components: {
-    WebStore,
+    ProductList,
   },
 };
 </script>
