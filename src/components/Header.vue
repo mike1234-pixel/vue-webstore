@@ -5,18 +5,27 @@
                 <h1>
                     <router-link :to="{name:'iMain'}">{{sitename}}</router-link>
                 </h1>
+                <h1>
+                    <router-link :to="{name:'iForm'}">form</router-link>
+                </h1>
             </div>
             <div class="nav navbar-nav navbar-right cart">
-                <button class='checkout-btn' @click='showCheckout();'>
+                <router-link
+                    tag="button"
+                    active-class="checkout-btn__active"
+                    :to="{name: 'iForm'}"
+                    class='checkout-btn'>
                     <span class="checkout-btn__item-total">{{ cartItemCount }}</span>
                     <i class="bi checkout-btn__bag" :class="{ 'bi-bag-check-fill' : cartItemCount > 0, 'bi-bag' : cartItemCount <= 0 }"></i>
-                </button>
+                </router-link>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import store from '../store/index'
+
     export default {
         name: 'my-header',
         data() {
@@ -24,10 +33,9 @@
                 sitename: 'Laptop Shop',
             }
         },
-        props: ['cartItemCount'],
-        methods: {
-            showCheckout() {
-                this.$router.push({name: 'Form'})
+        computed: {
+            cartItemCount() {
+                return store.state.cart.length || '';
             }
         }
     }

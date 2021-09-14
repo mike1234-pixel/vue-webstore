@@ -16,7 +16,7 @@
                                     <h4>Product Description</h4>
                                         <div v-html='product.productInformation'></div>
                                         <p class='price'>
-                                            £{{ product.price | formatPrice }}
+                                            £{{ product.price }}
                                         </p>
                                     <button class='default webstore-btn' @click='addToCart(product); calculateCartTotal(product); addItemToCart(product); addToCartItemsSummary(product);' v-if='canAddToCart(product)'>Add to Cart <i class="bi bi-bag-plus-fill"></i></button>
                                     <button class='disabled webstore-btn' v-else>Out Of Stock <i class="bi bi-bag-x-fill"></i></button>
@@ -35,10 +35,17 @@
                                         Buy Now!
                                     </span>
                                     <div class="rating">
-                                        <span v-for='n in product.rating'> 
+                                        <span v-for='n in product.rating' :key='n'> 
                                             <i class="bi bi-star-fill"></i>
                                         </span>
                                     </div>
+                                    <router-link
+                                        tag="button"
+                                        class="webstore-btn"
+                                        :to="{ name: 'Id', params: { id: product.id }}"
+                                    >
+                                        See More
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +56,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import store from '../store/index'
 
 
@@ -76,31 +82,7 @@ export default {
               }
               return productsArray.sort(compare);
           }
-      }
-  },
-  filters: {
-      formatPrice: function (price) {
-          if (!parseInt(price)) { return ''; }
-          if (price > 999999) {
-              const priceString = (price / 100).toFixed(2);
-              const priceArray = priceString.split('').reverse('');
-              let index = 3;
-              while (priceArray.length > index + 3) {
-                  priceArray.splice(index + 3, 0, ',');
-                  index += 4;
-              }
-              return '$' + priceArray.reverse().join('');
-          } else {
-              return '$' + (price / 100).toFixed(2);
-          }
-      }
-  },
-  created: function() {
-      axios.get('./products.json')
-          .then((response) => {
-              const products = response.data.products;
-              store.commit('loadProductsToStore', products);
-          })
+      },
   },
   methods: {
       checkRating(n, myProduct) {
@@ -134,13 +116,13 @@ export default {
           cartItems.forEach((item) => {
               // add item to cartItemsSummary array
               if (!cartItemsSummary.includes(item)) {
-                  //this.cartItemsSummary.push(item)
+                //this.cartItemsSummary.push(item)
                 store.commit('addProductToCartItemsSummary', item);
               }
           })
           // find item added in cartItemsSummary array and increment quantity
         store.commit('incrementProductQuantity', aProduct);
-      }
+      },
   }
 }
 </script>

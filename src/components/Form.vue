@@ -1,10 +1,9 @@
 <template>
   <div class="checkout">
-    <my-header :cartItemCount="cartItemCount"></my-header>
       <h3>Your Cart</h3>
       <ul>
           <li>Total: £{{ cartTotal }}</li>
-          <li>Items: {{ cartItemCount}}</li>
+          <li>Items: {{ cartItemCount }}</li>
           <li v-for="item in cartItemsSummary" :key="item.id">
               <ul>
                   <li>{{item.title}}</li>
@@ -29,7 +28,7 @@
       <label for="state">State</label>
       <select name="state" id="state" v-model='order.state'>
           <option value="" disabled>State</option>
-          <option v-for='(state, key) in states' v-bind:value='state'>{{ key }}</option>
+          <option v-for='(state, key) in states' :value='state' :key='key'>{{ key }}</option>
       </select>
       <label for="postcode">Postcode</label>
       <input type="text" name='postcode' id='postcode' v-model='order.postcode' class='form-control'>
@@ -82,11 +81,11 @@ export default {
     cartTotal() {
       return store.state.cartTotal;
     },
-    cartItemCount() {
-      return store.state.cart.length || '';
-    },
     cartItemsSummary() {
       return store.state.cartItemsSummary;
+    },
+    cartItemCount() {
+        return store.state.cart.length || '';
     }
   },
   components: { MyHeader },

@@ -2,17 +2,14 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    // counter: 0
     products: [],
     cart: [],
     cartItems: [],
+    cartItemCount: 0,
     cartTotal: 0,
     cartItemsSummary: [],
   },
   mutations: {
-    // increment(state) {
-    //   state.counter++;
-    // }
     loadProductsToStore(state, products) {
       state.products = products;
     },
@@ -36,6 +33,4 @@ export default createStore({
     })
     }
   },
-  // actions: {},
-  // modules: {},
 });
