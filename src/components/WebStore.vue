@@ -1,13 +1,13 @@
 <template>
   <div>
-    <header class='nav'>
+<header class='nav'>
     <div class="container">
         <div class="row">
             <div class="col">
                 <h1 v-text='sitename'></h1>
-                <button class='nav__shopping-cart' @click='showCheckout'>
-                    <span>{{ cartItemCount }}</span>
-                    <i class="bi bi-bag"></i>
+                <button class='checkout-btn' @click='showCheckout();'>
+                    <span class="checkout-btn__item-total">{{ cartItemCount }}</span>
+                    <i class="bi checkout-btn__bag" :class="{ 'bi-bag-check-fill' : cartItemCount > 0, 'bi-bag' : cartItemCount <= 0 }"></i>
                 </button>
             </div>
         </div>
@@ -26,11 +26,21 @@
                     <div class="col-sm-6">
                                 <h1 v-text='product.title'></h1>
                                 <p v-html='product.description'></p>
+                                <h4>Product Description</h4>
+                                    <div v-html='product.productInformation'></div>
+
+
+
+
+
                                 <p class='price'>
-                                    {{ product.price | formatPrice }}
+                                    £{{ product.price | formatPrice }}
                                 </p>
-                                <button class='default' @click='addToCart(product)' v-if='canAddToCart(product)'>Add to Cart</button>
-                                <button class='disabled' v-else>Add to Cart</button>
+                                
+                                    <button class='default webstore-btn' @click='addToCart(product); calculateCartTotal(product); addItemToCart(product); addToCartItemsSummary(product);' v-if='canAddToCart(product)'>Add to Cart <i class="bi bi-bag-plus-fill"></i></button>
+                                
+                                <button class='disabled webstore-btn' v-else>Out Of Stock <i class="bi bi-bag-x-fill"></i></button>
+       
                                 <span class="inventory-message"
                                     v-if='(product.availableInventory - cartCount(product.id)) === 0'    
                                 >
@@ -46,7 +56,7 @@
                                 </span>
                                 <div class="rating">
                                     <span v-for='n in product.rating'> 
-                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star-fill"></i>
                                     </span>
                                 </div>
                             </div>
@@ -55,6 +65,23 @@
                 </div>
                 <!-- .trim modifier on v-model removes leading white space -->
                 <div class="checkout" v-else>
+                    <h3>Your Cart</h3>
+                    <ul>
+                        <li>Total: £{{ cartTotal }}</li>
+                        <li>Items: {{ cartItemCount}}</li>
+                        <li v-for="item in cartItemsSummary" :key="item.id">
+                            <ul>
+                                <li>{{item.title}}</li>
+                                <li>{{item.price}}</li>
+                                <li>
+                                    <img v-bind:src='item.image' alt="{{item.title}}" class="checkout__product-img" />
+                                </li>
+                                <li>Quantity: {{item.quantity}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    
                     <label for="fname">First Name</label> 
                     <input type="text" name="fname" id="fname" class='form-control' v-model.trim='order.firstName'>
                     <label for="lname">Last Name</label>
@@ -82,6 +109,7 @@
                     <button type='submit' class='btn btn-primary submit' @click='submitForm'>Place Order</button>
                     {{ order.gift }}
                 </div>
+                
             </div>
         </main>
   </div>
@@ -91,10 +119,10 @@
 import axios from 'axios'
 
 export default {
-  name: 'WebStore',
+  name: 'Laptop Shop',
   data() {
     return {
-      sitename: 'Vue.js Web Store',
+      sitename: 'Laptop Shop',
       showProduct: true,
       order: {
           firstName: '',
@@ -119,6 +147,9 @@ export default {
           NY: 'New York'
       },
       cart: [],
+      cartTotal: 0,
+      cartItems: [],
+      cartItemsSummary: []
     }
   },
   computed: {
@@ -182,8 +213,28 @@ export default {
           }
           return count;
       },
+      addItemToCart(aProduct) {
+          this.cartItems.push(aProduct)
+      },
+      calculateCartTotal(aProduct) {
+          this.cartTotal += aProduct.price;
+      },
       showCheckout() {
           this.showProduct = this.showProduct ? false: true;
+      },
+      addToCartItemsSummary(aProduct) {
+          this.cartItems.forEach((item) => {
+              // add item to cartItemsSummary array
+              if (!this.cartItemsSummary.includes(item)) {
+                  this.cartItemsSummary.push(item)
+              }
+          })
+          // find item added in cartItemsSummary array and increment quantity
+          this.cartItemsSummary.forEach((item) => {
+              if (item.id === aProduct.id) {
+                  item.quantity++;
+              }
+          })
       },
       submitForm() {
           alert('submitted')
@@ -200,7 +251,70 @@ export default {
       justify-content: space-between;
     }
     h1 {
-      color: blue !important;
+      color: skyblue;
     }
   }
+
+    .webstore-btn {
+        border: 2px solid skyblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: lightgoldenrodyellow;
+        color: skyblue;
+        transition: all 0.2s;
+        height: 40px;
+        width: 140px;
+        border-radius: 50px;
+        i {
+            margin-left: 10px;
+        }
+        &:hover {
+            background: skyblue;
+            color: lightgoldenrodyellow;
+            border-color: lightgoldenrodyellow;
+        }
+    }
+
+    .disabled {
+        color: grey;
+        background: lightsteelblue;
+        &:hover {
+            color: grey;
+            background: lightsteelblue; 
+        }
+    }
+
+    .checkout-btn {
+        border: none;
+        background: transparent;
+        position: relative;
+        &__item-total {
+            background: lightgoldenrodyellow;
+            border-radius: 50px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 25px;
+            border: 1px solid skyblue;
+            font-size: 12px;
+        }
+        &__bag {
+            font-size: 30px;
+            color: skyblue;
+        }
+    }
+
+    .bi-star-fill {
+        font-size: 30px;
+        color: skyblue;
+    }
+
+    .checkout {
+        &__product-img {
+            width: 100px;
+        }
+    }
+
 </style>

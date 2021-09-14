@@ -2,48 +2,58 @@
     "products":[
       {
         "id": 1001,
-        "title": "Cat Food, 25lb bag",
-        "description": "A 25 pound bag of <em>irresistible</em>, organic goodness for your cat.",
-        "price": 2000,
-        "image": "/assets/cat.jpg",
+        "title": "DELL XPS 13 9310 13.4\" Laptop - Intel® Core™ i7, 512 GB SSD, Silver",
+        "description": "<ul><li>Windows 10 / Free Upgrade to Windows 11</li><li>Intel® Evo™ platform</li><li>Intel® Core™ i7-1185G7 Processor</li><li>RAM: 16 GB / Storage: 512 GB SSD</li><li>Full HD screen</li></ul>",
+        "price": 1299,
+        "image": "/assets/dell-xps.jpg",
         "availableInventory": 3,
-        "rating": 1
+        "rating": 5,
+        "productInformation": "<h6>Intel® Evo™ platform</h6><p>Choose your new laptop with confidence. The Intel® Evo™ platform brings together premium technologies for an exceptional performance. The Dell XPS 13 9310 13.4\" Laptop provides improved responsiveness, fast connectivity with Intel® WiFi 6 and a reliable battery life so you can work anywhere. All verified by Intel®.</p><h6>Powerful processing and graphics</h6><p>Time to upgrade your laptop. Featuring an 11th gen Intel® Core™ i7 processor and Intel® Iris® Plus graphics, the Dell XPS 13 Laptop can do everything from watching movies and online browsing, to intensive tasks like photo and film editing. You'll always have the power to do whatever you want.</p><h6>Stunning 4K touchscreen</h6><p>See every detail with the stunning 4K Ultra HD screen. This means you can immerse yourself with your favourite series from Netflix, edit incredibly detailed graphics, or simply scroll back through stunning images from your last holiday.</p><h6>SSD storage</h6><p>Boasting a whopping 1 TB of SSD storage and 16 GB of RAM, you'll have the power to run any programme you want at impressive loading speeds. No more waiting around for videos to be converted, programs to be loaded, or your laptop to start up. It'll all load in a flash - you won't even have time to grab a coffee before the XPS 13 is ready to go.</p><h6>Get a free upgrade to Windows 11 when available</h6><p>Featuring an all new interface, improved Start menu and multi-tasking tools to enhance your productivity, Windows 11 is almost here. With this laptop, you'll get a free upgrade when it becomes available in late 2021 / early 2022.</p><h6>Microsoft Office & internet security</h6><p>If you use Word or PowerPoint all the time at work or school, you'll probably want it on your laptop at home. Click on the Bundles tab above for a great deal on Microsoft Office. Want to protect yourself against viruses? We've got you covered with deals on internet security too.</p>",
+        "quantity": 0
       },
       {
         "id": 1002,
-        "title": "Yarn",
-        "description": "Yarn your cat can play with for a very <strong>long</strong> time!",
-        "price": 299,
-        "image": "/assets/cat.jpg",
+        "title": "APPLE MacBook Pro 13.3\" - M1, 256 GB SSD, Space Grey",
+        "description": "<ul><li>macOS 11.0 Big Sur</li><li>Apple M1 chip</li><li>RAM: 8 GB / Storage: 256 GB SSD</li><li>Retina display</li><li>Battery life: Up to 20 hours</li></ul>",
+        "price": 1149,
+        "image": "/assets/macbook-pro.jpg",
         "availableInventory": 7,
-        "rating": 1
+        "rating": 5,
+        "productInformation": "<h6>Get more done with the Apple M1 chip</h6><p>Everything you love about the MacBook Pro. But with more power.</p><p>From video-editing to gaming, the Apple M1 chip lets you take on the biggest tasks and creative projects without draining your battery. It's 2.8x faster than the previous generation, with eight-cores of power providing an incredible performance.</p><p>Don't waste time waiting for things to load. The MacBook Pro is super responsive and wakes instantly. Plus, with speedy SSD storage, you'll be able to save files, load programs and access huge video and image files in a moment.</p><h6>Touch Bar with Touch ID</h6><p>Apple's Touch Bar replaces the function keys at the top of your keyboard, so you can see relevant controls depending on what you're doing. Watching a film? Rewind or skip forward with the Touch Bar. Editing photos? Adjust, crop and filter the image – all from the Touch Bar.</p><p>Touch ID provides advanced security for everything you do. Unlock your MacBook securely, use Apple Pay without remembering your password, and access private files with just your fingerprint.</p><h6>Razor thin and feather light</h6><p>Take your MacBook Pro with you wherever you are - the library, the daily commute, an important business meeting. It's feather light at just 1.4 kg.</p><p>Forget the mid-day recharge. Thanks to the M1 chip, the MacBook Pro will give you up to 17 hours of web browsing, or up to 20 hours of the content you love on Apple TV. Perfect for a full working day and beyond.</p><h6>Brilliant Retina display</h6><p>Enjoy enhanced videos, images, and games with the enhanced Retina display that's brighter and more colourful than previous generations. The LED backlit display offers true-to-life images with vivid, realistic details – essential for graphic design, colour grading, and editing.</p><p>True Tone technology automatically adjusts the images you see to the lighting around you – so everything looks great whether you're finishing an edit late at night or in bright sunlight.</p><h6>More detail in your FaceTime calls</h6><p>Look your best on FaceTime calls thanks to the M1 chip. It uses an image signal processor to give clearer, sharper images, while the Neural Engine can recognise faces to adjust white balance and exposure for improved, natural-looking skin.</p>",
+        "quantity": 0
       },
       {
         "id": 1003,
-        "title": "Kitty Litter",
-        "description": "Premium kitty litter for your cat.",
-        "price": 1100,
-        "image": "/assets/cat.jpg",
+        "title": "APPLE MacBook Air 13.3\" (2020) - M1, 256 GB SSD, Space Grey",
+        "description": "<ul><li>macOS 11.0 Big Sur</li><li>Apple M1 chip</li><li>RAM: 8 GB / Storage: 256 GB SSD</li><li>Retina display</li><li>Battery life: Up to 18 hours</li></ul>",
+        "price": 949,
+        "image": "/assets/macbook-air.jpg",
         "availableInventory": 7,
-        "rating": 4
+        "rating": 4,
+        "productInformation": "<h6>Thin and fast with the Apple M1 chip</h6><p>Incredibly light and boasting a speedy performance, get your work done anywhere with the MacBook Air (2020).</p><p>From video-editing to gaming, the Apple M1 chip lets you take on the biggest tasks without draining your battery. It's 3.5x faster than the previous generation, with eight-cores of power providing an incredible performance. And for whisper-quiet operation, the improved thermal efficiency means it doesn't even need a fan.</p><p>With the Retina Display screen, everything from blockbuster movies to everyday browsing is a visual joy. True Tone technology automatically adjust the display to your environment - so web pages and emails look as natural as if they were printed.</p><h6>SSD for superfast loading</h6><p>At the heart of the MacBook Air is a solid state drive with 256 GB of storage space. So, there's plenty of room for your work projects, movies, photos and music. And it's twice as fast as the previous MacBook Air, so you can load up your important files at lightning-speed.</p><h6>Browse all day with up to 18 hours of battery life</h6><p>Forget the mid-day recharge. Thanks to the M1 chip, the MacBook Air will give you up to 15 hours of web browsing, or up to 18 hours of the content you love on Apple TV. That's plenty for the entire working day, as well as your entertainment on the journey to and from the office.</p><h6>More detail in your FaceTime calls</h6><p>Look your best on FaceTime calls thanks to the M1 chip. It uses an image signal processor to give clearer, sharper images, while the Neural Engine can recognise faces to adjust white balance and exposure for improved, natural-looking skin.</p><h6>Unlock your MacBook securely with Touch ID</h6><p>Forgotten passwords are a thing of the past thanks to the MacBook Air's Touch ID sensor. Simply place your finger over the sensor to unlock with nothing but your fingerprint, for effortless security wherever you are. It's great for accessing sensitive documents and system settings or shopping online with Apple Pay, so you can keep everything important safe.</p>",
+        "quantity": 0
       },
       {
         "id": 1004,
-        "title": "Cat House",
-        "description": "A place for your cat to play!",
-        "price": 799,
-        "image": "/assets/cat.jpg",
+        "title": "HP Spectre x360 15.6\" 2 in 1 Laptop - Intel® Core™ i7, 512 GB SSD, Black",
+        "description": "<ul><li>Windows 10 / Free Upgrade to Windows 11</li><li>Intel® Core™ i7-10750H Processor</li><li>RAM: 16 GB / Storage: 512 GB SSD</li><li>Graphics: NVIDIA GeForce GTX 1650 MaxQ 4 GB</li><li>4K Ultra HD touchscreen</li></ul>",
+        "price": 1749,
+        "image": "/assets/hp-spectre.jpg",
         "availableInventory": 7,
-        "rating": 5
+        "rating": 4,
+        "productInformation": "<h6>2-in-1 design transforms from laptop to tablet</h6><p>A 360-degree hinge lets switch the device from a laptop position into a more portable tablet-like form, so you've got the best of both worlds. In laptop mode it's easy to work on projects and edit documents. But if you're just browsing online or watching a show on the train, tablet mode has you covered.</p><h6>Built for power</h6><p>Powered by an 11th gen Intel® Core™ i7 processor, the HP Spectre x360 is perfect for multitasking. Able to handle any application, from video editing suites to CAD programs, it delivers smooth performance no matter what you're working on.</p><p>A huge 11 hours of power lets you use your laptop for the entire day on a single charge. Work on your documents and spreadsheets or run draining software without any fear of a flat battery.</p><h6>Fast loading times</h6><p>Never worry about running out of space for your files, movies and music. The HP Spectre x360 has 512 GB of storage, so you're able to download freely and enjoy the same consistent performance. And because it's an SSD drive, your laptop will start up and load everything in a matter of moments.</p><h6>Security</h6><p>There's added security features built in too - you can access your personal files safely with the fingerprint reader, and you can disable your webcam when you're not using it using the Webcam Kill Switch.</p><h6>Get a free upgrade to Windows 11 when available</h6><p>Featuring an all new interface, improved Start menu and multi-tasking tools to enhance your productivity, Windows 11 is almost here. With this laptop, you'll get a free upgrade when it becomes available in late 2021 / early 2022.</p><h6>Microsoft Office & internet security</h6><p>If you use Word or PowerPoint all the time at work or school, you'll probably want it on your laptop at home. Click on the Bundles tab above for a great deal on Microsoft Office. Want to protect yourself against viruses? We've got you covered with deals on internet security too.</p>",
+        "quantity": 0
       },
       {
         "id": 1005,
-        "title": "Laser Pointer",
-        "description": "Drive your cat crazy with this <em>amazing</em> product.",
-        "price": 4999,
-        "image": "/assets/cat.jpg",
+        "title": "ACER 715 15.6\" Chromebook - Intel® Pentium®, 128 GB eMMC, Grey",
+        "description": "<ul><li>Chrome OS</li><li>Intel® Pentium® Gold 4417U Processor</li><li>RAM: 4 GB / Storage: 128 GB eMMC</li><li>Full HD screen</li><li>Battery life: Up to 12 hours</li></ul>",
+        "price": 399,
+        "image": "/assets/acer.jpg",
         "availableInventory": 7,
-        "rating": 1
+        "rating": 4,
+        "productInformation":"<h6>Carry case and mouse included</h6><p>Get more done without waiting around thanks to the Acer CB715 15.6\" Chromebook. Powered by an Intel Pentium Gold processor, it can easily handle your daily browsing, from researching for an assignment, to shopping online.</p><p>And because you've got a carry case and mouse included, it's easier than ever to take your chromebook on the go and finish up your essay wherever you are.</p><h6>Lightweight and long-lasting</h6><p>Weighing only 1.8 kg, the Chromebook 715 definitely won't weigh you down. And the stylish yet durable aluminium build protects your chromebook from accidental knocks and bumps.</p><h6>Apps for everything</h6><p>Discovering new games and apps on your Acer CB715 Chromebook is easy. With the Google Play Store, you have access to over two million apps that you can download in a matter of moments. Switch between using the same apps on your phone to your Chromebook without compromising speed or security.</p><h6>Fingerprint reader</h6><p>Don't want to remember a password? Thanks to the fingerprint reader you can quickly and easily log in to your chromebook. The fingerprint reader also keeps all your information secure - no one will be able to log in but you.</p>",
+        "quantity": 0
       }
     ]
   }

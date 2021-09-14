@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="software shop logo" src="../assets/software-development.svg" class="home__icon" />
     <WebStore />
   </div>
 </template>
@@ -16,3 +16,11 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+  .home {
+    &__icon {
+      width: 100px;
+    }
+  }
+</style>
