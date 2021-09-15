@@ -1,10 +1,11 @@
 <template>
 <Header />
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/form">Form</router-link>
-  </div> -->
-  <router-view />
+<!-- transition between router views -->
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in" >
+        <component :is="Component" />
+      </transition>
+    </router-view>
 </template>
 
 <script>
@@ -14,4 +15,5 @@
     components: { Header } 
   }
 </script>
+
 

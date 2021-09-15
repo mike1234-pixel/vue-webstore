@@ -1,10 +1,9 @@
 // global styles
-h1 {
-    color: green !important;
-}
 
-
+// fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+$dark: #212121;
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -34,86 +33,124 @@ h1 {
     }
   }
 
-    .webstore-btn {
-        border: 2px solid skyblue;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: lightgoldenrodyellow;
-        color: skyblue;
-        transition: all 0.2s;
-        height: 40px;
-        width: 140px;
-        border-radius: 50px;
-        text-decoration: none;
-        i {
-            margin-left: 10px;
-        }
-        &:hover {
-            background: skyblue;
-            color: lightgoldenrodyellow;
-            border-color: lightgoldenrodyellow;
-        }
+.webstore-btn {
+    border: 2px solid skyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgoldenrodyellow;
+    color: skyblue;
+    transition: all 0.2s;
+    height: 40px;
+    width: 140px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    i {
+        margin-left: 10px;
     }
+    &:hover {
+        background: skyblue;
+        color: lightgoldenrodyellow;
+        border-color: lightgoldenrodyellow;
+    }
+}
 
-    .disabled {
+.disabled {
+    color: grey;
+    background: lightsteelblue;
+    &:hover {
         color: grey;
-        background: lightsteelblue;
-        &:hover {
-            color: grey;
-            background: lightsteelblue; 
+        background: lightsteelblue; 
+    }
+}
+
+.checkout-btn {
+    border: none;
+    background: transparent;
+    position: relative;
+    &__active {
+        .checkout-btn__bag {
+            font-size: 50px;
+        }
+        .checkout-btn__item-total {
+            left: -5px;
+            top: 5px;
         }
     }
-
-    .checkout-btn {
-        border: none;
-        background: transparent;
-        position: relative;
-        &__active {
-            .checkout-btn__bag {
-                font-size: 50px;
-            }
-            .checkout-btn__item-total {
-                left: -5px;
-                top: 5px;
-            }
-        }
-        &__item-total {
-            background: lightgoldenrodyellow;
-            border-radius: 50px;
-            display: block;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            right: 25px;
-            border: 1px solid skyblue;
-            font-size: 12px;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        &__bag {
-            font-size: 30px;
-            color: skyblue;
-            transition: all 0.2s;
-        }
+    &__item-total {
+        background: lightgoldenrodyellow;
+        border-radius: 50px;
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 25px;
+        border: 1px solid skyblue;
+        font-size: 12px;
+        transition: all 0.2s;
+        text-align: center;
     }
-
-    .bi-star-fill {
+    &__bag {
         font-size: 30px;
         color: skyblue;
+        transition: all 0.2s;
     }
+}
 
-    .checkout {
-        &__product-img {
-            width: 100px;
-        }
+.bi-star-fill {
+    font-size: 30px;
+    color: skyblue;
+}
+
+.checkout {
+    &__product-img {
+        width: 100px;
     }
+}
 
+.product {
+    margin: 30px 0;
+    &__price {
+        font-size: 24px;
+    }
+    &__inventory-message {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
 
+// transition classes
 
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s ease-out;
+}
 
-    .home {
-        &__icon {
-          width: 100px;
-        }
-      }
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+// animation classes
+
+.bounce-enter-active {
+    animation: shake 0.72s cubic-bezier(.37,.07,.19,.97) both;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+}
+
+@keyframes shake {
+    10%, 90% {
+        color: red;
+        transform: translate3d(-1px,0,0);
+    }
+    20%, 80% {
+        transform: translate3d(2px,0,0);
+    }
+    30%, 50%, 70% {
+        color: red;
+        transform: translate3d(-4px,0,0);
+    }
+    40%, 60% {
+        transform: translate3d(4px,0,0)
+    }
+}

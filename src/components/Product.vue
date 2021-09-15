@@ -3,10 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                     <h1>this is the id {{ $route.params.id }}</h1>
-                     <figure>
-                         <img :src="product.image" class="product">
-                     </figure>
+                    <figure>
+                        <img :src="product.image" class="product" style="width: 100%;">
+                    </figure>
                 </div>
                 <div class="col-md-6">
                     <h1>{{ product.title }}</h1>

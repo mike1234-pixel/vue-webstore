@@ -1,6 +1,5 @@
 <template>
   <div>
-    <img alt="software shop logo" src="../assets/software-development.svg" class="home__icon" />
     <ProductList />
   </div>
 </template>

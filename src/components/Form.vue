@@ -1,49 +1,54 @@
 <template>
-  <div class="checkout">
-      <h3>Your Cart</h3>
-      <ul>
-          <li>Total: £{{ cartTotal }}</li>
-          <li>Items: {{ cartItemCount }}</li>
-          <li v-for="item in cartItemsSummary" :key="item.id">
-              <ul>
-                  <li>{{item.title}}</li>
-                  <li>{{item.price}}</li>
-                  <li>
-                      <img v-bind:src='item.image' alt="{{item.title}}" class="checkout__product-img" />
-                  </li>
-                  <li>Quantity: {{item.quantity}}</li>
-              </ul>
-          </li>
-      </ul>
-      
-      
-      <label for="fname">First Name</label> 
-      <input type="text" name="fname" id="fname" class='form-control' v-model.trim='order.firstName'>
-      <label for="lname">Last Name</label>
-      <input type="text" name="lname" id="lname" class='form-control' v-model.trim='order.lastName'>
-      <label for="address">Address</label>
-      <input type="text" name='address' id='address' v-model.trim='order.address' class='form-control'>
-      <label for="city">City</label>
-      <input type="text" name='city' id='city' v-model.trim='order.city' class='form-control'>
-      <label for="state">State</label>
-      <select name="state" id="state" v-model='order.state'>
-          <option value="" disabled>State</option>
-          <option v-for='(state, key) in states' :value='state' :key='key'>{{ key }}</option>
-      </select>
-      <label for="postcode">Postcode</label>
-      <input type="text" name='postcode' id='postcode' v-model='order.postcode' class='form-control'>
-      <label for="gift">Ship as gift?</label>
-      <input type="checkbox" id='gift' value='true' 
-          v-bind:true-value='order.sendGift'
-          v-bind:false-value='order.dontSendGift'
-          v-model='order.gift'>
-      <label for="home">Home</label>
-      <input type="radio" id='home' v-bind:value='order.home' v-model='order.method'>
-      <label for="business">Business</label>
-      <input type="radio" id='business' v-bind:value='order.business' v-model='order.method'>
-      <button type='submit' class='btn btn-primary submit' @click='submitForm'>Place Order</button>
-      {{ order.gift }}
-  </div>
+  <section class="checkout">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Your Cart</h3>
+          <ul>
+              <li>Total: £{{ cartTotal }}</li>
+              <li>Items: {{ cartItemCount }}</li>
+              <li v-for="item in cartItemsSummary" :key="item.id">
+                  <ul>
+                      <li>{{item.title}}</li>
+                      <li>{{item.price}}</li>
+                      <li>
+                          <img v-bind:src='item.image' alt="{{item.title}}" class="checkout__product-img" />
+                      </li>
+                      <li>Quantity: {{item.quantity}}</li>
+                  </ul>
+              </li>
+          </ul>
+          
+          <label for="fname">First Name</label> 
+          <input type="text" name="fname" id="fname" class='form-control' v-model.trim='order.firstName'>
+          <label for="lname">Last Name</label>
+          <input type="text" name="lname" id="lname" class='form-control' v-model.trim='order.lastName'>
+          <label for="address">Address</label>
+          <input type="text" name='address' id='address' v-model.trim='order.address' class='form-control'>
+          <label for="city">City</label>
+          <input type="text" name='city' id='city' v-model.trim='order.city' class='form-control'>
+          <label for="state">State</label>
+          <select name="state" id="state" v-model='order.state'>
+              <option value="" disabled>State</option>
+              <option v-for='(state, key) in states' :value='state' :key='key'>{{ key }}</option>
+          </select>
+          <label for="postcode">Postcode</label>
+          <input type="text" name='postcode' id='postcode' v-model='order.postcode' class='form-control'>
+          <label for="gift">Ship as gift?</label>
+          <input type="checkbox" id='gift' value='true' 
+              v-bind:true-value='order.sendGift'
+              v-bind:false-value='order.dontSendGift'
+              v-model='order.gift'>
+          <label for="home">Home</label>
+          <input type="radio" id='home' v-bind:value='order.home' v-model='order.method'>
+          <label for="business">Business</label>
+          <input type="radio" id='business' v-bind:value='order.business' v-model='order.method'>
+          <button type='submit' class='btn btn-primary submit' @click='submitForm'>Place Order</button>
+          {{ order.gift }}
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
