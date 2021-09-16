@@ -16,7 +16,7 @@ export default {
   name: "Main",
   components: {
     ProductList,
-    Form
+    Form,
   },
   created: function() {
     axios.get('./products.json')

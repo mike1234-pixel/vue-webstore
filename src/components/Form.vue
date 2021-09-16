@@ -10,7 +10,7 @@
               <li v-for="item in cartItemsSummary" :key="item.id">
                   <ul>
                       <li>{{item.title}}</li>
-                      <li>{{item.price}}</li>
+                      <li>{{item.price * item.quantity}}</li>
                       <li>
                           <img v-bind:src='item.image' alt="{{item.title}}" class="checkout__product-img" />
                       </li>

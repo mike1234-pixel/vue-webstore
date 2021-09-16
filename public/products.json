@@ -2,7 +2,7 @@
     "products":[
       {
         "id": 1001,
-        "title": "DELL XPS 13 9310 13.4\" Laptop - Intel® Core™ i7, 512 GB SSD, Silver",
+        "title": "DELL XPS 13 9310 13.4\" Laptop - Intel® Core™ i7, 512 GB SSD",
         "description": "<ul><li>Windows 10 / Free Upgrade to Windows 11</li><li>Intel® Evo™ platform</li><li>Intel® Core™ i7-1185G7 Processor</li><li>RAM: 16 GB / Storage: 512 GB SSD</li><li>Full HD screen</li></ul>",
         "price": 1299,
         "image": "/assets/dell-xps.jpg",
@@ -35,7 +35,7 @@
       },
       {
         "id": 1004,
-        "title": "HP Spectre x360 15.6\" 2 in 1 Laptop - Intel® Core™ i7, 512 GB SSD, Black",
+        "title": "HP Spectre x360 15.6\" 2 in 1 Laptop - Intel® Core™ i7",
         "description": "<ul><li>Windows 10 / Free Upgrade to Windows 11</li><li>Intel® Core™ i7-10750H Processor</li><li>RAM: 16 GB / Storage: 512 GB SSD</li><li>Graphics: NVIDIA GeForce GTX 1650 MaxQ 4 GB</li><li>4K Ultra HD touchscreen</li></ul>",
         "price": 1749,
         "image": "/assets/hp-spectre.jpg",
@@ -46,7 +46,7 @@
       },
       {
         "id": 1005,
-        "title": "ACER 715 15.6\" Chromebook - Intel® Pentium®, 128 GB eMMC, Grey",
+        "title": "ACER 715 15.6\" Chromebook - Intel® Pentium®, 128 GB eMMC",
         "description": "<ul><li>Chrome OS</li><li>Intel® Pentium® Gold 4417U Processor</li><li>RAM: 4 GB / Storage: 128 GB eMMC</li><li>Full HD screen</li><li>Battery life: Up to 12 hours</li></ul>",
         "price": 399,
         "image": "/assets/acer.jpg",
