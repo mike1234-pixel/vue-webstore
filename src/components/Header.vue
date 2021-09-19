@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import store from '../store/index'
+import { mapGetters } from 'vuex';
 
     export default {
         name: 'my-header',
@@ -37,9 +37,9 @@ import store from '../store/index'
             }
         },
         computed: {
-            cartItemCount() {
-                return store.state.cart.length || '';
-            }
+            ...mapGetters([
+                'cartItemCount'
+            ])
         }
     }
 </script>

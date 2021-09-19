@@ -52,8 +52,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'; 
 import MyHeader from './Header.vue';
-import store from '../store/index'
 
 export default {
   name: 'Form',
@@ -83,15 +83,11 @@ export default {
     }
   },
   computed: {
-    cartTotal() {
-      return store.state.cartTotal;
-    },
-    cartItemsSummary() {
-      return store.state.cartItemsSummary;
-    },
-    cartItemCount() {
-        return store.state.cart.length || '';
-    }
+    ...mapGetters([
+        'cartTotal',
+        'cartItemsSummary',
+        'cartItemCount'
+    ])
   },
   components: { MyHeader },
   methods: {

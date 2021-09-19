@@ -36,11 +36,11 @@
                                     <div class="accordion accordion-flush">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
-                                            <button class="accordion-button" @click="expandAccordion($event)" type="button" data-bs-toggle="collapse" :data-bs-target="'#flushCollapse' + product.id" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            <button class="accordion-button collapsed" :id="'accordionCollapseBtn' + product.id" @click="expandAccordion($event)" type="button" :data-bs-target="'#accordionCollapse' + product.id" :aria-controls="'accordionCollapse' + product.id">
                                                 Product Description
                                             </button>
                                             </h2>
-                                            <div :id="'flushCollapse' + product.id" class="accordion-collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div :id="'accordionCollapse' + product.id" class="accordion-collapse collapse" :aria-labelledby="'accordionCollapseBtn' + product.id">
                                             <div class="accordion-body">
                                                 <div v-html='product.productInformation' class="product__information"></div>
                                             </div>
@@ -81,9 +81,9 @@
 </template>
 
 <script>
-import store from '../store/index';
 import expandAccordion from '../mixins/expandAccordion.vue'
 import addToCartFunctions from '../mixins/addToCartFunctions.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Products',
@@ -93,12 +93,16 @@ export default {
     }
   },
   computed: {
-      cartItemCount() {
-          return store.state.cart.length || '';
-      },
+      // mapGetters maps the vuex getters to a components computed properties.
+      // Each getter is listed in an array inside mapGetters
+      ...mapGetters([
+          'cartItemCount'
+      ]),
+      
       sortedProducts() { 
-          if (store.state.products.length > 0) {
-              let productsArray = store.state.products.slice(0);
+          const products = this.$store.getters.products;
+          if (products.length > 0) {
+              let productsArray = products.slice(0);
               function compare(a, b) {
                   if (a.title.toLowerCase() < b.title.toLowerCase())
                   return - 1;

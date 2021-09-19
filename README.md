@@ -30,5 +30,16 @@ npm run test:e2e
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## About
+
+This project is a web store frontend built on Vue CLI.
+
+Data is pulled from the products.json file in the public directory.
+
+Global state is managed using Vuex.
+
+Shared functionality for components is kept in the mixins directory.
+
+The project uses Bootstrap 5.
+
+
