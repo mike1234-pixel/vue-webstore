@@ -29,10 +29,23 @@ export default {
         addToCartItemsSummary(aProduct) {
             const cartItems = this.$store.getters.cartItems;
             const cartItemsSummary = this.$store.getters.cartItemsSummary;
+
+            // when on checkout and navigating back to home to add more of the same product
+            // the same product is added again when it shouldn't be
+
+            // the quantity changes when navigating away so the value changes
+            // have to check against the product id, as the whole array for the product values does not match
             cartItems.forEach((item) => {
                 // add item to cartItemsSummary array
-                if (!cartItemsSummary.includes(item)) {
-                    //this.cartItemsSummary.push(item)
+                let pushToArray = true;
+
+                cartItemsSummary.forEach((product) => {
+                    if (product.id === item.id) {
+                        pushToArray = false;
+                    }
+                })
+
+                if (pushToArray) {
                     this.addProductToCartItemsSummary(item);
                 }
             })

@@ -80,6 +80,7 @@ export default {
           sendGift: 'Send As A Gift',
           dontSendGift: 'Do Not Send As A Gift'
       },
+      madeOrder: false,
     }
   },
   computed: {
@@ -92,8 +93,10 @@ export default {
   components: { MyHeader },
   methods: {
     submitForm() {
-      alert('Submitted')
+      this.madeOrder = true;
     }
   }
 }
 </script>
+
+<!-- do not duplicate a product in the cart -->
